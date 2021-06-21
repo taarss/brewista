@@ -1,4 +1,5 @@
 <template>
+    <router-link :to="'/create/'+ data.id">
     <div class="wrapper w-full">
         <img class="w-full" :src="'http://localhost:3080/images/' + data.img" >
         <div class="pb-14 rounded-b-2xl px-8 pt-8 text-left" :class="data.isDark ? 'light' : 'dark'">
@@ -24,6 +25,7 @@
             </div>
         </div>
     </div>
+    </router-link>
 </template>
 <script>
 export default {

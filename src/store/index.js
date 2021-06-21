@@ -13,7 +13,11 @@ const store = createStore({
             isLoggedIn: false,
             userId: null,
             token: null,
-            tokenExpiration: null
+            tokenExpiration: null,
+            newCoffee: {
+                collectiveId: null,
+                brewType: null
+            }
         }
     },
     mutations: rootMutations,

@@ -1,6 +1,6 @@
 <template>
   <div class="card bg-gray-100 mb-10">
-    <router-link to="/home">
+    <router-link :to="'/steps/' + brewId + '/1'">
       <img class="cardImg w-100" :src="'http://localhost:3080/images/' + data.img" />
     </router-link>
     <div class="flex mx-5 mt-10">
@@ -18,16 +18,19 @@
             <p>{{ data.amountOfBeans }}</p>
         </div>
         <div class="brewDetail">
-            <p>{{ data.amountOfWater }}</p>
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="9.003" height="12" viewBox="0 0 9.003 12"><defs></defs><path class="a" d="M12.689,2.089a.256.256,0,0,0-.373,0C12.139,2.287,8,6.959,8,9.422a4.5,4.5,0,1,0,9,0C17,6.959,12.864,2.287,12.689,2.089ZM13.3,12.253a.245.245,0,0,1-.049,0,.25.25,0,0,1-.049-.5,2.231,2.231,0,0,0,1.8-2.707.25.25,0,1,1,.49-.1A2.756,2.756,0,0,1,13.3,12.253Z" transform="translate(-8 -2.009)"/></svg>
+                    <p>{{ data.amountOfWater }}</p>
+
         </div>
         <div class="brewDetail">
-            <p>{{ data.beanType }}</p>
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><defs></defs><g transform="translate(0.166)"><circle class="a" cx="2" cy="2" r="2" transform="translate(-0.166 6)"/><circle class="a" cx="2" cy="2" r="2" transform="translate(2.834)"/><circle class="a" cx="2" cy="2" r="2" transform="translate(5.834 6)"/></g></svg>
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><defs></defs><g transform="translate(0.166)"><circle class="a" cx="2" cy="2" r="2" transform="translate(-0.166 6)"/><circle class="a" cx="2" cy="2" r="2" transform="translate(2.834)"/><circle class="a" cx="2" cy="2" r="2" transform="translate(5.834 6)"/></g></svg>
+                    <p>{{ data.beanType }}</p>
+
         </div>
         <div class="brewDetail">
-            <p>{{ data.brewTime }}</p>
         <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="9.003" height="12" viewBox="0 0 9.003 12"><defs></defs><path class="a" d="M12.689,2.089a.256.256,0,0,0-.373,0C12.139,2.287,8,6.959,8,9.422a4.5,4.5,0,1,0,9,0C17,6.959,12.864,2.287,12.689,2.089ZM13.3,12.253a.245.245,0,0,1-.049,0,.25.25,0,0,1-.049-.5,2.231,2.231,0,0,0,1.8-2.707.25.25,0,1,1,.49-.1A2.756,2.756,0,0,1,13.3,12.253Z" transform="translate(-8 -2.009)"/></svg>
+                    <p>{{ data.brewTime }}</p>
+
         </div>
     </div>
   </div>
@@ -35,7 +38,7 @@
 
 <script>
 export default {
-  props: ["data"],
+  props: ["brewId","data"],
 };
 </script>
 <style scoped>

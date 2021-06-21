@@ -2,7 +2,7 @@
     <div class="mx-5">
     <Header></Header>
     <p class=" mb-6 text-left font-semibold text-gray-500">Previous Brews</p>
-    <base-card v-for="brew in brews" :data="brew" :key="brew.id"></base-card>
+    <base-card :brewId="brew.id" v-for="brew in brews" :data="brew" :key="brew.id"></base-card>
     </div>
     <Nav></Nav>
 </template>
