@@ -1,8 +1,7 @@
 <template>
-    <div class="mt-16">
       <router-link to="/feed">
         <svg
-            class="activeIcon ml-5"
+            class="activeIcon ml-5 mt-10"
             xmlns="http://www.w3.org/2000/svg"
             width="20.414"
             height="16.828"
@@ -16,6 +15,7 @@
             />
           </svg>
       </router-link>
+    <div class="mt-16 flex flex-col w-full justify-center items-center">
       <p :show="!!error" title="An error occurred">{{ error }}</p>
       <form @submit.prevent="submitForm">
         <div class="form-control">
@@ -29,8 +29,8 @@
         <p
           v-if="!formIsValid"
         >Please enter a valid email and password (must be at least 6 characters long).</p>
-        <button>{{ submitButtonCaption }}</button>
-        <button type="button" mode="flat" @click="switchAuthMode">{{ switchModeButtonCaption }}</button>
+        <button class="m-5">{{ submitButtonCaption }}</button>
+        <button class="m-5" type="button" mode="flat" @click="switchAuthMode">{{ switchModeButtonCaption }}</button>
       </form>
   </div>
 </template>
@@ -110,6 +110,9 @@ export default {
 </script>
 
 <style scoped>
+input{
+  max-width: 400px;
+}
 form {
   margin: 1rem;
   padding: 1rem;
@@ -132,7 +135,7 @@ textarea {
 }
 input:focus,
 textarea:focus {
-  border-color: #3d008d;
+  border-color: #000000;
   background-color: #faf6ff;
   outline: none;
 }
