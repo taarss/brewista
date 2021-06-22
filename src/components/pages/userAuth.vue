@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mt-16">
       <router-link to="/feed">
         <svg
             class="activeIcon ml-5"

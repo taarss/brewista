@@ -1,13 +1,11 @@
 <template>
-    <div class="mx-5">
-    <router-link v-if="!isLoggedIn" to="/auth" class="flex">
-      <svg xmlns="http://www.w3.org/2000/svg" class="loginIcon h-8 w-" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-      </svg>
-    </router-link>
+    <Banner class="hidden lg:flex lg:inline" :title="'Its a Great day for Coffee'"></Banner>
+    <div class="mx-5 mt-10">
     <Header class="mt-10"></Header>
     <p class=" mb-6 text-left font-semibold text-gray-500">Previous Brews</p>
-    <base-card :brewId="brew.id" v-for="brew in brews" :data="brew" :key="brew.id"></base-card>
+    <div class="sm:flex sm:flex-wrap sm:justify-between">
+      <base-card class="mainCard" :brewId="brew.id" v-for="brew in brews" :data="brew" :key="brew.id"></base-card>
+    </div>
     </div>
     <Nav :isOnMainPage="true"></Nav>
 </template>
@@ -15,8 +13,9 @@
 import baseCard from '../base-card.vue';
 import Header from '../header.vue';
 import Nav from '../nav.vue';
+import Banner from '../banner.vue';
 export default {
-  components: { baseCard, Header, Nav },
+  components: { baseCard, Header, Nav, Banner},
   data(){
     return{
         brews: null
@@ -42,7 +41,15 @@ export default {
 }
 </script>
 <style scoped>
-  .loginIcon{
 
-  }
+  @media only screen and (min-width: 640px){
+    .mainCard{
+      width: 45%;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .mainCard{
+      width: 30%;
+    }
+}
 </style>

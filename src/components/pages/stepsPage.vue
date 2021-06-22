@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-10 stepwrapper ">
+  <div class="mx-10 stepwrapper mt-16">
     <stepCard
       v-if="!this.isLoading"
       :header="this.currentStep.header"
@@ -81,12 +81,14 @@
 .navWrap {
   background-color: #fff782;
   border-radius: 30px;
+  max-width: 600px;
 }
 </style>
 <script>
 import stepCard from "../stepsCard.vue";
 export default {
   created() {
+    
     this.loadData()
   },
   data() {

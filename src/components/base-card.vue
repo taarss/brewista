@@ -19,7 +19,7 @@
         </div>
         <div class="brewDetail">
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="9.003" height="12" viewBox="0 0 9.003 12"><defs></defs><path class="a" d="M12.689,2.089a.256.256,0,0,0-.373,0C12.139,2.287,8,6.959,8,9.422a4.5,4.5,0,1,0,9,0C17,6.959,12.864,2.287,12.689,2.089ZM13.3,12.253a.245.245,0,0,1-.049,0,.25.25,0,0,1-.049-.5,2.231,2.231,0,0,0,1.8-2.707.25.25,0,1,1,.49-.1A2.756,2.756,0,0,1,13.3,12.253Z" transform="translate(-8 -2.009)"/></svg>
-                    <p>{{ data.amountOfWater }}</p>
+            <p>{{ data.amountOfWater }}</p>
 
         </div>
         <div class="brewDetail">
@@ -72,6 +72,6 @@ export default {
 
     }
     .brewDetail p {
-        margin-right: 3px;
+        margin-left: 3px;
     }
 </style>

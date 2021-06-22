@@ -1,7 +1,7 @@
 <template>
 <div class="flex mb-14 justify-between">
 
-  <h1 class="w-2/3 text-left text-3xl">It's a Great <span class="font-bold">Day for Coffee</span></h1>
+  <h1 class="lg:hidden w-2/3 text-left text-3xl">It's a Great <span class="font-bold">Day for Coffee</span></h1>
   <router-link to="/create">
     <button class="rounded-full  bg-black text-white">
         <svg
