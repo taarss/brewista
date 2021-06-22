@@ -1,5 +1,21 @@
 <template>
     <div>
+      <router-link to="/feed">
+        <svg
+            class="activeIcon ml-5"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20.414"
+            height="16.828"
+            viewBox="0 0 20.414 16.828"
+          >
+            <defs></defs>
+            <path
+              class="a"
+              d="M10,19,3,12m0,0,7-7M3,12H21"
+              transform="translate(-1.586 -3.586)"
+            />
+          </svg>
+      </router-link>
       <p :show="!!error" title="An error occurred">{{ error }}</p>
       <form @submit.prevent="submitForm">
         <div class="form-control">
@@ -47,6 +63,9 @@ export default {
     },
   },
   methods: {
+    getAuth(){
+      return this.$store.getters.userIsAuthenticated
+    },
     async submitForm() {
       this.formIsValid = true;
       if (
@@ -72,6 +91,9 @@ export default {
         this.error = err.message || 'Failed to authenticate, try later.';
       }
       this.isLoading = false;
+      if(this.getAuth()){
+        this.$router.push({ name: 'mainPage'})
+      }
     },
     switchAuthMode() {
       if (this.mode === 'login') {

@@ -25,7 +25,8 @@ export default {
         addCoffee(methodId){
             let currentCollective = this.coffeCollective.find(e => e.id == this.collectiveId);
             let currentTypes = this.coffeeTypes.find(e => e.id == methodId);
-            console.log(methodId);
+            let newId = Date.now();
+            console.log(currentTypes.name);
             fetch('https://vue-http-demo-f20d8-default-rtdb.europe-west1.firebasedatabase.app/brews.json', {
                 method: 'POST',
                 headers: {
@@ -35,12 +36,12 @@ export default {
                     amountOfBeans: currentTypes.weight,
                     amountOfWater: currentTypes.water,
                     bean: currentCollective.name,
-                    beanManufactor: 'NaN',
+                    beanManufactor: 'idk',
                     beanType: currentTypes.beanType,
                     brewTime: currentTypes.time,
-                    brewType: currentTypes.brewType,
-                    id: 20,
-                    img: currentCollective.img,
+                    brewType: currentTypes.name,
+                    id: newId,
+                    img: '538gm3mc.png',
                     steps: [{
                         header: 'This is a header',
                         id: 1,
@@ -63,7 +64,8 @@ export default {
                 }
             )}).then((res) => res.json())
   .then((data) => {
-    console.log(data);
+      console.log(data);
+      this.$router.push({ name: 'step', params: { brewId: newId, stepId: 1 } });
   })
   .catch((err) => console.log(err));
         }
